@@ -1,0 +1,338 @@
+Exercícios
+-----------------------------------------------------------------------------------------------------
+
+Crie uma classe Musica e atribua nome, categoria e duração, passando o resultado na tela por biblioteca:
+
+class Musica:
+    nome = ''
+    artista = ''
+    duracao = int
+
+musica1 = Musica()
+musica1.nome = 'One Last Time'
+musica1.artista = 'Killian Shore'
+musica1.duracao = 7
+
+musica2 = Musica()
+musica2.nome = 'Volte Plis'
+musica2.artista = 'Ruan Jipien'
+musica2.duracao = 4
+
+print(f'Musica: {musica1.nome} - Banda: {musica1.artista} - Duração: {musica1.duracao} minutos')
+-----------------------------------------------------------------------------------------------------
+
+class Restaurante:
+    nome = ''
+    categoria = ''
+    ativo = False
+
+restaurante_praca = Restaurante()
+//--------------------------//-------------
+
+Atribua o valor 'Italiana' ao atributo categoria da instância restaurante_praca da classe Restaurante.
+
+restaurante_praca.categoria = 'Italiana'
+-----------------------------------------------------------------------------------------------------
+
+Acesse o valor do atributo nome da instância restaurante_praca da classe Restaurante.
+
+nome_restaurante = restaurante_praca.nome
+-----------------------------------------------------------------------------------------------------
+
+Verifique o valor inicial do atributo ativo para a instância restaurante_praca e exiba uma mensagem informando se o restaurante está ativo ou inativo.
+
+ativo = restaurante_praca.ativo
+
+if ativo == True: 
+    print(f'O status do {restaurante_praca.nome} é: Ativo') 
+else:
+    print(f'O status do {restaurante_praca.nome} é: Inativo')
+-----------------------------------------------------------------------------------------------------
+
+Acesse o valor do atributo de classe categoria diretamente da classe Restaurante e armazene em uma variável chamada categoria.
+
+categoria = Restaurante.categoria
+-----------------------------------------------------------------------------------------------------
+
+Altere o valor do atributo nome para 'Bistrô'.
+
+restaurante_praca.nome = 'bistro'
+-----------------------------------------------------------------------------------------------------
+
+Crie uma nova instância da classe Restaurante chamada restaurante_pizza com o nome 'Pizza Place' e categoria 'Fast Food'.
+
+restaurante_pizza = Restaurante()
+
+restaurante_pizza.nome = 'Pizza Place'
+restaurante_pizza.categoria = 'Fast Food'
+-----------------------------------------------------------------------------------------------------
+
+Verifique se a categoria da instância restaurante_pizza é 'Fast Food'.
+
+restaurante_pizza.categoria = 'Fast Food'
+
+if restaurante_pizza.categoria == 'Fast Food':
+    print ('Esta tudo certo')
+else:
+    print('got wrong')
+-----------------------------------------------------------------------------------------------------
+
+Mude o estado da instância restaurante_pizza para ativo.
+
+ativo = not restaurante_pizza.ativo
+-----------------------------------------------------------------------------------------------------
+
+Imprima no console o nome e a categoria da instância restaurante_praca.
+
+print(f'O nome é: {restaurante_praca.nome} | Categoria: {restaurante_praca.categoria}')
+-----------------------------------------------------------------------------------------------------
+
+Faça uma classe Musica reescrita de forma concisa utilizando a sintaxe elegante do Python:
+
+class Musica:
+    def __init__(self, nome='', artista='', duracao=0):
+        self.nome = nome
+        self.artista = artista
+        self.duracao = duracao
+
+    def __str__(self):
+        return f'{self.nome}, {self.artista}, {self.duracao}'
+
+musica1 = Musica(nome='Under Pressure', artista='Queen & David Bowie', duracao=248)
+musica2 = Musica(nome='The Trooper', artista='Iron Maiden', duracao=245)
+musica3 = Musica(nome='Hotel California', artista='Eagles', duracao=390)
+
+print(f'{musica1} | {musica2} | {musica3}')
+-----------------------------------------------------------------------------------------------------
+
+Implemente uma classe chamada Carro com os atributos básicos, como modelo, cor e ano. Crie uma instância dessa classe e atribua valores aos seus atributos.
+
+class Carro:
+    def __init__(self, modelo, cor, ano):
+        self.modelo = modelo
+        self.cor = cor
+        self.ano = ano
+
+    def __str__(self):
+        return f'{self.modelo} | {self.cor} | {self.ano}'
+
+carro_ferrari = Carro(modelo= 'Ferrari', cor= 'Vermelha', ano= 2037)
+carro_fusca = Carro(modelo= 'Fusca', cor= 'Preto', ano= 1892)
+
+print(carro_ferrari, carro_fusca)
+-----------------------------------------------------------------------------------------------------
+
+Crie uma classe chamada Restaurante com os atributos nome, categoria, ativo e crie mais 2 atributos. Instancie um restaurante e atribua valores aos seus atributos.
+
+class RestauranteZ:
+    def __init__(self, nome, categoria, local, qtd_estrelas, ativo=False):
+        self.nome = nome
+        self.categoria = categoria
+        self.local = local
+        self.qtd_estrelas = qtd_estrelas
+        self.ativo = ativo
+
+    def __str__(self):
+        return f'{self.nome} | {self.categoria} | {self.local} | {self.qtd_estrelas} | {self.ativo}'
+
+restaurante_mil_sabores = RestauranteZ(nome= 'Restaurante_Mil_Sabores', categoria= 'Popular', local= 'Camburi', qtd_estrelas= '5 estrelas', ativo= False)
+
+print(restaurante_mil_sabores)
+-----------------------------------------------------------------------------------------------------
+
+Crie uma classe chamada Cliente e pense em 4 atributos. Em seguida, instancie 3 objetos desta classe e atribua valores aos seus atributos através de um método construtor.
+
+class Cliente:
+    def __init__(self, nome, sexo, endereco, cpf):
+        self.nome = nome
+        self.sexo = sexo
+        self.endereco = endereco
+        self.cpf = cpf
+    
+    def __str__(self):
+        return f'{self.nome} | {self.sexo} | {self.endereco} | {self.cpf}'
+
+pessoa1 = Cliente(nome='Carlos', sexo='M', endereco='Serra', cpf='123456\n')
+pessoa2 = Cliente(nome='Tiago', sexo='M', endereco='Serra', cpf='654321\n')
+pessoa3 = Cliente(nome='Antonia', sexo='F', endereco='Vitória', cpf='123654\n')
+
+print(pessoa1, pessoa2, pessoa3)
+-----------------------------------------------------------------------------------------------------
+
+Crie uma nova classe chamada Pessoa com atributos como nome, idade e profissão. Adicione um método especial __str__ para imprimir uma representação em string da pessoa. Implemente também um método de instância chamado aniversario que aumenta a idade da pessoa em um ano. Por fim, adicione uma propriedade chamada saudacao que retorna uma mensagem de saudação personalizada com base na profissão da pessoa.
+
+class Pessoa:
+
+    def __init__(self, nome1='', idade='', profissao=''):
+        self.nome1 = nome1.upper()
+        self.idade = idade
+        self.profissao = profissao.title()
+    
+    def __str__(self):
+        return f' Meu nome é {self.nome1} | Tenho {self.idade} anos de idade | Sou {self.profissao}'
+    
+    @property
+    def saudacao(self):
+        if self.profissao:
+            return f'Olá, sou {self.nome1}! Trabalho como {self.profissao}.'
+        else:
+            return f'Olá, sou {self.nome1}!'
+    
+    def aniversario(self):
+        self.idade += 1
+        return f'Que lindo! você é {self.idade}!!! ✌️'
+    
+pessoa1 = Pessoa(nome1='Tiago', idade=40, profissao='Programador/Contador')
+pessoa2 = Pessoa(nome1='Joao', idade=29)
+
+print('Informações iniciais:')
+print(pessoa1)
+print(pessoa2)
+print()
+
+pessoa1.aniversario()
+pessoa2.aniversario()
+
+print('Informações pós niver:')
+print(pessoa1)
+print(pessoa2)
+
+print('Informações pós niver:')
+print(pessoa1.saudacao)
+print(pessoa2.saudacao)
+-----------------------------------------------------------------------------------------------------
+
+um exemplo de uma classe chamada Livro que representa informações sobre um livro, como título, autor e número de páginas:
+
+class Livro:
+    def __init__(self, titulo='', autor='', paginas=0):
+        self.titulo = titulo
+        self.autor = autor
+        self.paginas = paginas
+
+    def __str__(self):
+        return f'{self.titulo} por {self.autor} - {self.paginas} páginas'
+
+    @property
+    def titulo_autor(self):
+        return f'{self.titulo} por {self.autor}'
+
+    def aumentar_paginas(self, quantidade):
+        self.paginas += quantidade
+
+livro1 = Livro(titulo='A batalha do apocalipse', autor='Nicholas Sem')
+
+print(livro1)
+-----------------------------------------------------------------------------------------------------
+
+Crie uma classe chamada ContaBancaria com um construtor que aceita os parâmetros titular e saldo. Inicie o atributo ativo como False por padrão.
+
+class contaBancaria:
+    def __init__(self, titulo, saldo):
+        self.titulo = titulo
+        self.saldo = saldo
+        self._ativo = False
+-----------------------------------------------------------------------------------------------------
+
+Na classe ContaBancaria, adicione um método especial __str__ que retorna uma mensagem formatada com o titular e o saldo da conta. Crie duas instâncias da classe e imprima essas instâncias.
+
+    def __str__(self):
+        return f'O titular da conta é {self.titulo} e possui R$ {self.saldo} de saldo'
+
+pessoa1 = ContaBancaria('Tiago Pereira', '3.000.000,00')
+pessoa2 = ContaBancaria('Carlos Eduardo', '5.000.000,00')
+
+print(pessoa1)
+print(pessoa2)
+-----------------------------------------------------------------------------------------------------
+
+Adicione um método de classe chamado ativar_conta à classe ContaBancaria que define o atributo ativo como True. Crie uma instância da classe, chame o método de classe e imprima o valor de ativo.
+
+    @classmethod
+    def ativar_conta(cls, conta):
+        conta._ativo = True
+
+conta3 = ContaBancaria("Anderson", 200)
+print(f"Antes de ativar: Conta ativa? {conta3._ativo}")
+ContaBancaria.ativar_conta(conta3)
+print(f"Depois de ativar: Conta ativa? {conta3._ativo}")
+-----------------------------------------------------------------------------------------------------
+
+Refatore a classe ContaBancaria para utilizar a abordagem "pythonica" na criação de atributos. Utilize propriedades, se necessário.
+    
+    @property
+    def titular(self):
+        return self._titular
+    
+    @property
+    def saldo(self):
+        return self._saldo
+    
+    @property
+    def ativo(self):
+        return self._ativo
+        
+    @classmethod
+    def ativar_conta(cls, conta):
+        conta._ativo = True
+-----------------------------------------------------------------------------------------------------
+
+Crie uma classe chamada ClienteBanco com um construtor que aceita 5 atributos. Instancie 3 objetos desta classe e atribua valores aos seus atributos através do método construtor.
+
+class Cliente_banco:
+    def __init__(self, nome, sobrenome, sexo, idade, estado):
+        self._nome = nome
+        self._sobrenome = sobrenome
+        self._sexo = sexo
+        self._idade = idade
+        self._estado = estado
+
+cliente1 = Cliente_banco(nome='Tiago', sobrenome='Pereira', sexo='M', idade=41, estado='ES')
+cliente2 = Cliente_banco(nome='Carlos Eduardo', sobrenome='Do val', sexo='M', idade=40, estado='ES')
+cliente3 = Cliente_banco(nome='Chrystoffer', sobrenome='Keene', sexo='M', idade=42, estado='NJ')
+
+print(f'O cliente do banco é {cliente1._nome} {cliente1._sobrenome} de sexo {cliente1._sexo} possui {cliente1._idade} anos de idade e é oriundo de {cliente1._estado}')
+print(f'O cliente do banco é {cliente2._nome} {cliente2._sobrenome} de sexo {cliente2._sexo} possui {cliente2._idade} anos de idade e é oriundo de {cliente2._estado}')
+print(f'O cliente do banco é {cliente3._nome} {cliente3._sobrenome} de sexo {cliente3._sexo} possui {cliente3._idade} anos de idade e é oriundo de {cliente3._estado}')
+-----------------------------------------------------------------------------------------------------
+
+Crie uma classe chamada Livro com um construtor que aceita os parâmetros titulo, autor e ano_publicacao. Inicie um atributo chamado disponivel como True por padrão.
+
+class Livro:
+    def __init__(self, titulo, autor, ano_publicacao):
+        self._titulo = titulo
+        self._autor = autor
+        self._ano_publicacao = ano_publicacao
+        self.disponivel = True
+-----------------------------------------------------------------------------------------------------
+
+Na classe Livro, adicione um método especial str que retorna uma mensagem formatada com o título, autor e ano de publicação do livro. Crie duas instâncias da classe Livro e imprima essas instâncias.
+
+class Livro:
+...    
+    def __str__(self):
+        return f'Titulo do livro: {self._titulo} | Autor: {self._autor} | Ano: {self._ano_publicacao}'
+
+livro1 = Livro('A batalha do Apocalipse'.ljust(36), 'Chrys Prattson'.ljust(25), 2007)
+livro2 = Livro('O guia do Mochileiro das Galáxias'.ljust(36), 'Douglas Adams'.ljust(25), 1983)
+
+print(livro1)
+print(livro2) 
+-----------------------------------------------------------------------------------------------------
+
+Adicione um método de instância chamado emprestar à classe Livro que define o atributo disponivel como False. Crie uma instância da classe, chame o método emprestar e imprima se o livro está disponível ou não.
+
+class Livro:
+    ...
+
+    def __str__(self):
+        return f'... | {self.disponivel}'
+    
+    @property
+    def disponivel(self):
+        return '✅' if self._disponivel else '❌'
+    
+    def emprestar(self):
+        self._disponivel = False
+
+livro2.emprestar()
